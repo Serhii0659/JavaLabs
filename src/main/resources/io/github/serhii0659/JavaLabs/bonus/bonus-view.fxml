@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<BorderPane fx:id="rootPane" prefHeight="650.0" prefWidth="900.0" styleClass="main-window" xmlns:fx="http://javafx.com/fxml" fx:controller="io.github.serhii0659.JavaLabs.bonus.BonusController">
+    <top>
+        <HBox alignment="CENTER_LEFT" onMouseDragged="#handleWindowDrag" onMousePressed="#handleWindowPress" styleClass="custom-title-bar">
+            <Label styleClass="title-bar-label" text="Bonus: Побудова графіка з БД" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button onAction="#closeWindow" styleClass="title-bar-button, close-button"><graphic><FontIcon iconLiteral="fas-times" iconColor="#a8b2c1"/></graphic></Button>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="15.0" styleClass="vbox-container">
+            <padding><Insets bottom="15.0" left="15.0" right="15.0" top="15.0" /></padding>
+
+            <HBox spacing="15.0" alignment="CENTER_LEFT" styleClass="card">
+                <Button text="1. Згенерувати дані в БД (y = sin(x))" onAction="#onGenerateData" styleClass="button"/>
+                <Button text="2. Побудувати графік (SELECT)" onAction="#onLoadGraph" styleClass="button-primary"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="Очистити графік" onAction="#onClearGraph" styleClass="button-danger"/>
+            </HBox>
+
+            <LineChart fx:id="lineChart" title="Графік функції Y = f(X)" VBox.vgrow="ALWAYS" legendVisible="false">
+                <xAxis>
+                    <NumberAxis label="Значення X" side="BOTTOM" />
+                </xAxis>
+                <yAxis>
+                    <NumberAxis label="Значення Y" side="LEFT" />
+                </yAxis>
+            </LineChart>
+
+            <Label text="* Графік будується виключно на основі даних, отриманих SQL-запитом з PostgreSQL." styleClass="label-info"/>
+        </VBox>
+    </center>
+</BorderPane>

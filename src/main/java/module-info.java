@@ -32,6 +32,7 @@ module io.github.serhii0659.JavaLabs {
     opens io.github.serhii0659.JavaLabs.lab9 to javafx.fxml;
     opens io.github.serhii0659.JavaLabs.lab10 to javafx.fxml;
     opens io.github.serhii0659.JavaLabs.lab11 to javafx.base, javafx.fxml;
+    opens io.github.serhii0659.JavaLabs.bonus to javafx.fxml;
 
     // === ЕКСПОРТ (щоб Java бачила класи) ===
     exports io.github.serhii0659.JavaLabs;

@@ -82,8 +82,11 @@
                         <Button maxWidth="Infinity" minHeight="90.0" maxHeight="Infinity" onAction="#openLab10" styleClass="card" text="Lab 10: Файли" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
                             <graphic><FontIcon iconColor="#ffaa00" iconLiteral="fas-file-alt" iconSize="24" /></graphic>
                         </Button>
-                        <Button maxWidth="Infinity" minHeight="90.0" maxHeight="Infinity" onAction="#openLab11" styleClass="card" text="Lab 11: База даних (PostgreSQL)" wrapText="true" GridPane.columnSpan="4" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                        <Button maxWidth="Infinity" minHeight="90.0" maxHeight="Infinity" onAction="#openLab11" styleClass="card" text="Lab 11: База даних (PostgreSQL)" wrapText="true" GridPane.columnSpan="2" GridPane.columnIndex="0" GridPane.rowIndex="3">
                             <graphic><FontIcon iconColor="#00ff88" iconLiteral="fas-database" iconSize="28" /></graphic>
+                        </Button>
+                        <Button maxWidth="Infinity" minHeight="90.0" maxHeight="Infinity" onAction="#openBonus" styleClass="card" text="Bonus: Побудова графіка з БД" wrapText="true" GridPane.columnSpan="2" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                            <graphic><FontIcon iconColor="#ff00ff" iconLiteral="fas-chart-line" iconSize="28" /></graphic>
                         </Button>
 
                     </GridPane>

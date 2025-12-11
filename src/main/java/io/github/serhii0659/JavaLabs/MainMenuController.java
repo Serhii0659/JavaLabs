@@ -81,6 +81,9 @@ public class MainMenuController {
     /** Відкриває вікно Лабораторної роботи №11. */
     @FXML public void openLab11() { openLabWindow("lab11/lab11-view.fxml", "Lab 11: База даних"); }
 
+    /** Відкриває вікно Бонусу. */
+    @FXML public void openBonus() { openLabWindow("bonus/bonus-view.fxml", "Bonus: Графіки"); }
+
     private void openLabWindow(String fxmlPath, String title) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
