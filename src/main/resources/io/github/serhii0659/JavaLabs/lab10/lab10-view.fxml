@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<BorderPane fx:id="rootPane" prefHeight="650.0" prefWidth="900.0" styleClass="main-window" xmlns:fx="http://javafx.com/fxml" fx:controller="io.github.serhii0659.JavaLabs.lab10.Lab10Controller">
+    <top>
+        <HBox alignment="CENTER_LEFT" onMouseDragged="#handleWindowDrag" onMousePressed="#handleWindowPress" styleClass="custom-title-bar">
+            <Label styleClass="title-bar-label" text="Лабораторна робота №10: Файли" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button onAction="#closeWindow" styleClass="title-bar-button, close-button"><graphic><FontIcon iconLiteral="fas-times" iconColor="#a8b2c1"/></graphic></Button>
+        </HBox>
+    </top>
+    <center>
+        <VBox spacing="15.0" styleClass="vbox-container">
+            <padding><Insets bottom="20.0" left="20.0" right="20.0" top="20.0" /></padding>
+
+            <Label text="Етап 1: Текстові файли" styleClass="label-title"/>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Button text="1. Створити menu_input.txt" onAction="#onCreateDummy" styleClass="button"/>
+                <Button text="2. Зчитати з txt" onAction="#onReadText" styleClass="button-primary"/>
+            </HBox>
+
+            <Separator />
+
+            <Label text="Етап 2: Обробка та Бінарні файли" styleClass="label-title"/>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Button text="3. Сортувати (А-Я)" onAction="#onSort" styleClass="button"/>
+                <Button text="4. Експорт у .dat (Серіалізація)" onAction="#onSaveBinary" styleClass="button"/>
+                <Button text="5. Імпорт з .dat (Десеріалізація)" onAction="#onLoadBinary" styleClass="button"/>
+            </HBox>
+
+            <Separator />
+
+            <Label text="Результат виконання:" styleClass="label-info"/>
+            <TextArea fx:id="outputArea" editable="false" wrapText="true" VBox.vgrow="ALWAYS" styleClass="text-area" style="-fx-font-family: 'Consolas', 'Courier New', monospace;"/>
+        </VBox>
+    </center>
+</BorderPane>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<BorderPane fx:id="rootPane" prefHeight="600.0" prefWidth="800.0" styleClass="main-window" xmlns:fx="http://javafx.com/fxml" fx:controller="io.github.serhii0659.JavaLabs.lab7.Lab7Controller">
+    <top>
+        <HBox alignment="CENTER_LEFT" onMouseDragged="#handleWindowDrag" onMousePressed="#handleWindowPress" styleClass="custom-title-bar">
+            <Label styleClass="title-bar-label" text="Лабораторна робота №7: Абстрактні класи та інтерфейси" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button onAction="#closeWindow" styleClass="title-bar-button, close-button"><graphic><FontIcon iconLiteral="fas-times" iconColor="#a8b2c1"/></graphic></Button>
+        </HBox>
+    </top>
+    <center>
+        <VBox spacing="20.0" styleClass="vbox-container">
+            <padding><Insets bottom="20.0" left="20.0" right="20.0" top="20.0" /></padding>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Демонстрація:" styleClass="label-title"/>
+                <Button text="Запустити (Abstract Dish / Soup / Pizza)" onAction="#onRunDemo" styleClass="button-primary"/>
+            </HBox>
+
+            <Label text="Результат виконання:" styleClass="label-info"/>
+            <TextArea fx:id="outputArea" editable="false" wrapText="true" VBox.vgrow="ALWAYS" styleClass="text-area" style="-fx-font-family: 'Consolas', 'Courier New', monospace;"/>
+        </VBox>
+    </center>
+</BorderPane>

@@ -1,0 +1,225 @@
+/* ============================================
+   JavaLabs - Futuristic Theme
+   ============================================ */
+
+/* --- 1. Основні кольори та змінні --- */
+.root {
+    /* Палітра */
+    -fx-primary-dark: #0a0e27;
+    -fx-primary: #1a1f3a;
+    -fx-secondary: #2d3561;
+    -fx-accent: #00d9ff;
+    -fx-accent-hover: #00b8d4;
+    -fx-accent-glow: #00ffff;
+
+    /* Фони */
+    -fx-bg-primary: linear-gradient(to bottom, #0a0e27, #1a1f3a);
+    -fx-bg-card: rgba(45, 53, 97, 0.6);
+
+    /* Текст */
+    -fx-text-primary: #e0e6ed;
+    -fx-text-secondary: #a8b2c1;
+    -fx-text-accent: #00d9ff;
+
+    /* Ефекти */
+    -fx-glow-color: rgba(0, 217, 255, 0.3);
+    -fx-shadow-dark: rgba(0, 0, 0, 0.5);
+
+    /* Шрифт */
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+    -fx-font-size: 14px;
+
+    /* ВАЖЛИВО: Базовий рут сцени має бути прозорим для заокруглення */
+    -fx-background-color: transparent;
+}
+
+/* --- 2. ГОЛОВНЕ ВІКНО (Виправлення фону) --- */
+/* Цей клас треба додати до кореневого BorderPane в FXML */
+.main-window {
+    -fx-background-color: -fx-bg-primary; /* Повертаємо темний фон */
+    -fx-background-radius: 10;            /* Заокруглення кутів */
+    -fx-border-color: -fx-accent;         /* Тонка рамка */
+    -fx-border-width: 1px;
+    -fx-border-radius: 10;
+    /* Тінь, щоб вікно виділялося на робочому столі */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.8), 20, 0.5, 0, 0);
+}
+
+/* --- 3. Кастомний заголовок вікна (Title Bar) --- */
+.custom-title-bar {
+    -fx-background-color: linear-gradient(to bottom, #1a1f3a, #0a0e27);
+    -fx-border-color: -fx-accent;
+    -fx-border-width: 0 0 1px 0;
+    -fx-padding: 8px 10px;
+    -fx-spacing: 10px;
+    /* Заокруглюємо тільки верхні кути заголовка */
+    -fx-background-radius: 10 10 0 0;
+    -fx-border-radius: 10 10 0 0;
+}
+
+.title-bar-label {
+    -fx-text-fill: -fx-text-accent;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.title-bar-button {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-min-width: 40px;
+}
+
+.title-bar-button:hover {
+    -fx-background-color: rgba(0, 217, 255, 0.2);
+}
+
+.title-bar-button .icon-label {
+    -fx-text-fill: -fx-text-secondary;
+}
+
+.title-bar-button:hover .icon-label {
+    -fx-text-fill: -fx-text-accent;
+}
+
+.close-button:hover {
+    -fx-background-color: #ff3366;
+    -fx-background-radius: 0 10 0 0; /* Щоб не вилазило за кути */
+}
+
+.close-button:hover .icon-label {
+    -fx-text-fill: white;
+}
+
+/* --- 4. Контейнери та Картки --- */
+.vbox-container, .hbox-container {
+    -fx-background-color: transparent;
+}
+
+.card {
+    -fx-background-color: -fx-bg-card;
+    -fx-border-color: -fx-accent;
+    -fx-border-width: 1px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(gaussian, -fx-shadow-dark, 10, 0.3, 0, 3);
+    -fx-alignment: CENTER_LEFT;
+}
+
+/* --- 5. Текстові мітки (Labels) --- */
+.label {
+    -fx-text-fill: -fx-text-primary;
+}
+
+.label-header {
+    -fx-text-fill: -fx-text-accent;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, -fx-glow-color, 10, 0.5, 0, 0);
+}
+
+.label-info {
+    -fx-text-fill: -fx-text-secondary;
+    -fx-font-size: 13px;
+}
+
+/* --- 6. Кнопки (Buttons) --- */
+.button {
+    -fx-background-color: linear-gradient(to bottom, -fx-secondary, -fx-primary);
+    -fx-text-fill: -fx-text-primary;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-border-color: -fx-accent;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to bottom, -fx-accent, -fx-accent-hover);
+    -fx-border-color: -fx-accent-glow;
+    -fx-text-fill: -fx-primary-dark;
+    -fx-effect: dropshadow(gaussian, -fx-glow-color, 15, 0.7, 0, 0);
+}
+
+.button:pressed {
+    -fx-background-color: -fx-accent-hover;
+    -fx-scale-y: 0.98;
+    -fx-scale-x: 0.98;
+}
+
+.button.card {
+    -fx-content-display: LEFT;
+    -fx-font-size: 16px;
+}
+
+/* --- 7. Поля вводу --- */
+.text-field, .text-area {
+    -fx-background-color: -fx-bg-card;
+    -fx-text-fill: -fx-text-primary;
+    -fx-prompt-text-fill: -fx-text-secondary;
+    -fx-border-color: -fx-accent;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.text-field:focused, .text-area:focused {
+    -fx-border-color: -fx-accent-glow;
+    -fx-effect: dropshadow(gaussian, -fx-glow-color, 5, 0.5, 0, 0);
+}
+
+/* --- 8. Таблиці --- */
+.table-view {
+    -fx-background-color: -fx-bg-card;
+    -fx-border-color: -fx-accent;
+    -fx-border-radius: 5px;
+}
+
+.table-view .column-header {
+    -fx-background-color: linear-gradient(to bottom, -fx-secondary, -fx-primary);
+    -fx-text-fill: -fx-accent;
+    -fx-font-weight: bold;
+    -fx-border-color: -fx-accent;
+    -fx-border-width: 0 0 2px 0;
+}
+
+.table-view .table-cell {
+    -fx-text-fill: -fx-text-primary;
+    -fx-alignment: CENTER-LEFT;
+}
+
+.table-view .table-row-cell:odd {
+    -fx-background-color: rgba(45, 53, 97, 0.3);
+}
+
+.table-view .table-row-cell:hover {
+    -fx-background-color: rgba(0, 217, 255, 0.1);
+}
+
+/* --- 9. Діалоги --- */
+.dialog-pane {
+    -fx-background-color: -fx-primary;
+    -fx-border-color: -fx-accent;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: linear-gradient(to bottom, -fx-secondary, -fx-primary);
+}
+
+.dialog-pane .header-panel .label {
+    -fx-text-fill: -fx-accent;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.dialog-pane .content .label {
+    -fx-text-fill: -fx-text-primary;
+}
+
+.scroll-bar { -fx-background-color: transparent; }
+.scroll-bar .thumb { -fx-background-color: -fx-accent; -fx-background-radius: 5px; }
+.scroll-bar .track { -fx-background-color: rgba(26, 31, 58, 0.5); -fx-background-radius: 5px; }

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<BorderPane fx:id="rootPane" prefHeight="200.0" prefWidth="400.0" styleClass="main-window" stylesheets="@../../styles.css" xmlns:fx="http://javafx.com/fxml" fx:controller="io.github.serhii0659.JavaLabs.lab11.ConfirmationController">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" onMouseDragged="#handleWindowDrag" onMousePressed="#handleWindowPress" styleClass="custom-title-bar">
+            <FontIcon iconColor="#ff3366" iconLiteral="fas-exclamation-triangle" iconSize="14" />
+            <Label styleClass="title-bar-label" text="Підтвердження видалення" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button onAction="#onCancel" styleClass="title-bar-button, close-button">
+                <graphic><FontIcon iconColor="#a8b2c1" iconLiteral="fas-times" iconSize="12" /></graphic>
+            </Button>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="10.0">
+            <padding><Insets bottom="20.0" left="20.0" right="20.0" top="20.0" /></padding>
+            <Label fx:id="messageLabel" style="-fx-font-size: 16px; -fx-text-fill: #e0e6ed; -fx-wrap-text: true; -fx-text-alignment: center;" text="Ви дійсно бажаєте видалити цей запис?" />
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER" spacing="20.0" style="-fx-padding: 0 0 20 0;">
+            <Button text="Скасувати" onAction="#onCancel" styleClass="button" prefWidth="100.0"/>
+            <Button text="Видалити" onAction="#onConfirm" styleClass="button-danger" prefWidth="100.0">
+                <graphic><FontIcon iconLiteral="fas-trash" iconColor="white"/></graphic>
+            </Button>
+        </HBox>
+    </bottom>
+
+</BorderPane>
